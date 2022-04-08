@@ -53,8 +53,8 @@ public class OrdemServicoService {
 		OrdemServico newObj = new OrdemServico();
 		newObj.setId(obj.getId());
 		newObj.setObservacoes(obj.getObservacoes());
-		newObj.setPrioridade(Prioridade.toEnum(obj.getPrioridade()));
-		newObj.setStatus(Status.toEnum(obj.getStatus()));
+		newObj.setPrioridade(Prioridade.toEnum(obj.getPrioridade().getCodigoPrioridade()));
+		newObj.setStatus(Status.toEnum(obj.getStatus().getCodigoStatus()));
 		
 		Tecnico tecnico = tecnicoService.findById(obj.getTecnico());
 		Cliente cliente = clienteService.findById(obj.getCliente());
